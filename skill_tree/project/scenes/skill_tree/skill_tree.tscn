@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://6dybunf8rpfg"]
+
+[ext_resource type="PackedScene" uid="uid://b7lvn0eeq5v5l" path="res://project/scenes/skill_button/skill_button.tscn" id="1_q62vr"]
+[ext_resource type="Resource" uid="uid://c4q41bofuvgib" path="res://project/Skill_Resource/example.tres" id="3_xubjn"]
+[ext_resource type="Resource" uid="uid://cm3jjqvomawv5" path="res://project/Skill_Resource/example2.tres" id="4_lrd1i"]
+[ext_resource type="Script" uid="uid://bpqxhxkff676l" path="res://project/scenes/skill_tree/camera_2d.gd" id="8_7b5kg"]
+
+[node name="SkillTree" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -4.003
+anchor_top = -5.679
+anchor_right = 5.836
+anchor_bottom = 7.644
+offset_left = -47.5439
+offset_top = 54.9922
+offset_right = -48.0723
+offset_bottom = 54.6875
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(573, 316)
+script = ExtResource("8_7b5kg")
+
+[node name="SkillButton" parent="." instance=ExtResource("1_q62vr")]
+layout_mode = 0
+offset_left = 445.0
+offset_top = 234.0
+offset_right = 485.0
+offset_bottom = 274.0
+stats = ExtResource("3_xubjn")
+
+[node name="SkillButton2" parent="SkillButton" instance=ExtResource("1_q62vr")]
+layout_mode = 0
+offset_left = -78.0
+offset_top = 70.0
+offset_right = -38.0
+offset_bottom = 110.0
+stats = ExtResource("4_lrd1i")

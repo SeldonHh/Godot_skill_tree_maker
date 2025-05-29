@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SkillResource" load_steps=3 format=3 uid="uid://cm3jjqvomawv5"]
+
+[ext_resource type="Script" uid="uid://5aei65n4q41f" path="res://project/Skill_Resource/1_SkillResourceBase.gd" id="1_2wmh7"]
+[ext_resource type="Texture2D" uid="uid://c8qwse0ehetxk" path="res://project/icon.svg" id="2_nrc8m"]
+
+[resource]
+script = ExtResource("1_2wmh7")
+name = "Original name"
+texture = ExtResource("2_nrc8m")
+description = "Guess you didn't see that coming..."
+max_level = 3
+level = 0
+base_upgrade = false
+cost = 0
+skill_level_required = 3
+metadata/_custom_type_script = "uid://5aei65n4q41f"

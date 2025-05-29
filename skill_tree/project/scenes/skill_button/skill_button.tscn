@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7lvn0eeq5v5l"]
+
+[ext_resource type="Script" uid="uid://6f3gdfiib801" path="res://project/scenes/skill_button/skill_button.gd" id="2_ghnot"]
+[ext_resource type="PackedScene" uid="uid://h0ipuju4qvbb" path="res://project/scenes/skill_button/popup.tscn" id="3_ghnot"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ld7k8"]
+bg_color = Color(0, 0, 0, 0.764706)
+corner_radius_top_left = 17
+corner_radius_top_right = 17
+corner_radius_bottom_right = 17
+corner_radius_bottom_left = 17
+
+[node name="SkillButton" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+toggle_mode = true
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("2_ghnot")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ld7k8")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "0/3"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Popup" parent="." instance=ExtResource("3_ghnot")]
+layout_mode = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]
